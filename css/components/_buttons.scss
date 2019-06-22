@@ -1,0 +1,17 @@
+@import "../variables.scss";
+
+.btn {
+    background-color: $main-color;
+    border-radius: 44px;
+    font-family: $main-font-2;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 700;
+
+    &-small {
+    padding: 12px 24px;
+}
+}
