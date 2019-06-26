@@ -1,8 +1,54 @@
 @import "../variables.scss";
 
 @media only screen and (min-width: $desktop) {
-	.container {
-    max-width: 720px;
-    margin: 0 auto;
-}
+    .container {
+        max-width: 1200px;
+    }
+
+    .navbar {
+        padding: 31px 0px;
+
+        &-content {
+        	position: relative;
+        }
+
+        &-content-block {
+            flex-basis: 100%;
+        }
+
+        &-logo {
+            position: absolute;
+            left: 0;
+        }
+
+        &-block {
+        	display: flex;
+        }
+
+        &-menu {
+            @include flex-between;
+            flex-basis: 45%;
+            margin-left: 490px;
+ 
+        }
+
+        // &-menu-item {
+        //     border-bottom: none;
+        //     margin: 0 auto;
+        //     height: inherit;
+        //     font-size: 16px;
+        //     display: list-item;
+        // }
+
+        &-menu-link {
+            padding-left: 0px;
+            display: inline;
+            color: $main-color;
+
+            &:hover {
+                border-left: none;
+                color: $text-color-light;
+            }
+        }
+    }
 }

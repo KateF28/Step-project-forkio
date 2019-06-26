@@ -1,0 +1,29 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $tablet) {
+    .container {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+    .header {
+        margin-top: 0px;
+        height: 680px;
+
+        &-name {
+            font-size: 64px;
+            margin-top: 60px;
+            margin-bottom: 18px;
+        }
+
+        &-desk {
+            font-size: 24px;
+            margin-bottom: 18px;
+            font-family: $main-font-1;
+        }
+
+        &-text {
+            font-size: 16px;
+        }
+    }
+}

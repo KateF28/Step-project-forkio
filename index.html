@@ -16,21 +16,67 @@
 <body>
     <nav class="navbar">
         <div class="container navbar-content">
-            <a class="navbar-logo" href="#"><img class="navbar-logo-img" src="img/logo.png"><span class="navbar-logo-text"></span></a>
-            <a href="" class="btn btn-small">Buy now</a>
-            <a href="#" class="navbar-toggler">
-                <span class="navbar-toggler-line navbar-toggler-line-first"></span>
-                <span class="navbar-toggler-line"></span>
-                <span class="navbar-toggler-line"></span>
+            <div class="navbar-content-block">
+            <a class="navbar-logo" href="#">
+                <div class="navbar-logo-img"></div><span class="navbar-logo-text">FORKIO</span>
             </a>
-            <ul class="navbar-menu">
-                <li class="navbar-menu-item"><a href="" class="navbar-menu-link">Overview</a></li>
-                <li class="navbar-menu-item"><a href="" class="navbar-menu-link">About Fork</a></li>
-                <li class="navbar-menu-item"><a href="" class="navbar-menu-link">Buying Options</a></li>
-                <li class="navbar-menu-item"><a href="" class="navbar-menu-link">Support</a></li>
-            </ul>
+            <a href="" class="btn btn-small">Buy now</a>
+            </div>
+            <div class="navbar-block">
+                <a href="#" class="navbar-toggler">
+                    <span class="navbar-toggler-line"></span>
+                </a>
+                <ul class="navbar-menu">
+                    <li class="navbar-menu-item"><a href="#" class="navbar-menu-link">Overview</a></li>
+                    <li class="navbar-menu-item"><a href="#" class="navbar-menu-link">About Fork</a></li>
+                    <li class="navbar-menu-item"><a href="#" class="navbar-menu-link">Buying Options</a></li>
+                    <li class="navbar-menu-item"><a href="#" class="navbar-menu-link">Support</a></li>
+                </ul>
+                <div class="navbar-menu-overlay"></div>
+            </div>
         </div>
     </nav>
+    <div class="header">
+        <div class="container">
+            <p class="header-name">Fork app</p>
+            <p class="header-desk">A Real Gamechanger In The World Of Web-Development</p>
+            <p class="header-text">v. 2.8 For Mac and Windows</p>
+            <a href="#" class="btn btn-long">Download for free now</a>
+        </div>
+    </div>
+    <div class="smj"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    // document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    // document.querySelector('.navbar-menu').classList.toggle('navbar-menu-shown');
+    // });
+    function burgerMenu(selector) {
+        let menu = $(selector);
+        let button = menu.find('.navbar-toggler');
+        let links = menu.find('.navbar-menu-item');
+        let overlay = menu.find('.navbar-menu-overlay');
+
+        button.on('click', (e) => {
+            e.preventDefault();
+            toggleMenu();
+        })
+
+        links.on('click', () => toggleMenu());
+        overlay.on('click', () => toggleMenu());
+
+        function toggleMenu() {
+            menu.toggleClass('navbar-block-active');
+
+            if (menu.hasClass('navbar-block-active')) {
+                $('body').css('overflow', 'hidden');
+            } else {
+                $('body').css('overflow', 'visible');
+            }
+        }
+    }
+
+    burgerMenu('.navbar-block');
+    </script>
 </body>
 
 </html>

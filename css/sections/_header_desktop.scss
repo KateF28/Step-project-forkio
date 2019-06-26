@@ -1,0 +1,20 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $desktop) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .header {
+    height: 700px;
+    background-size: cover;
+
+    &-name {
+        font-size: 82px;
+    }
+
+    &-desk {
+        font-size: 30px;
+    }
+}
+}

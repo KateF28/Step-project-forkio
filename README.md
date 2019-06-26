@@ -1,4 +1,5 @@
 ## Step-project "Forkio". Team work
+
 #### The technologies used:
 - HTML 5, CSS 3;
 - SCSS;

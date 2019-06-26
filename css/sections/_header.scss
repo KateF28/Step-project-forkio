@@ -1,0 +1,40 @@
+@import "../variables.scss";
+
+.header {
+    margin-top: 105px;
+    background-image: url(../img/header.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 615px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-name {
+        text-transform: capitalize;
+        font-family: $main-font-2;
+        font-size: 48px;
+        color: $text-color-light;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin-top: 44px;
+    }
+
+    &-desk {
+        font-family: $main-font-2;
+        font-size: 18px;
+        color: $main-color;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 2;
+    }
+
+    &-text {
+        font-family: $main-font-2;
+        font-size: 14px;
+        color: rgb(132, 142, 151);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

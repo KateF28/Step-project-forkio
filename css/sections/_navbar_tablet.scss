@@ -1,8 +1,76 @@
 @import "../variables.scss";
+@import "../mixin.scss";
 
 @media only screen and (min-width: $tablet) {
-	.container {
-    max-width: 720px;
-    margin: 0 auto;
-}
+    .container {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        padding-bottom: 4px;
+        padding-top: 24px;
+        position: static;
+
+        &-content {
+            display: block;
+            position: static;
+        }
+
+        &-content-block {
+            flex-basis: 100%;
+        }
+
+        &-logo {
+            display: inline-block;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        &-logo-text {
+            display: inline-block;
+            font-size: 24px;
+            font-family: $main-font-1;
+            color: $main-color;
+            margin-left: 17px;
+
+            &:hover {
+                color: $text-color-light;
+            }
+        }
+
+        &-toggler {
+            display: none;
+        }
+
+        &-menu {
+            @include flex-between;
+            position: static;
+            background-color: transparent;
+        }
+
+        &-menu-item {
+            border-bottom: none;
+            margin: 0 auto;
+            height: inherit;
+            font-size: 16px;
+            display: list-item;
+        }
+
+        &-menu-link {
+            padding-left: 0px;
+            display: inline;
+            color: $main-color;
+
+            &:hover {
+                border-left: none;
+                color: $text-color-light;
+            }
+        }
+
+        &-menu-overlay {
+            display: none;
+        }
+    }
 }
