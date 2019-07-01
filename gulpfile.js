@@ -1,108 +1,100 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');							//sass
-const browserSync = require('browser-sync').create();		//runtime watcher and changer
-const clean = require('gulp-clean');						//cleaner product directory "dev"
-const cleanCSS = require('gulp-clean-css');					//CSS minifier
-const sourcemaps = require('gulp-sourcemaps');				//SCSS navigation in Chrome inspector
-const rename = require("gulp-rename");						//rename files after minify
-const concat = require('gulp-concat');						//concat for js
-const terser = require('gulp-terser');						//minify for js
-const autoprefixer = require('gulp-autoprefixer');			//cross-browser compatibility css
-const babel = require('gulp-babel');						//cross-browser compatibility js
+const sass = require('gulp-sass');                          //sass
+const browserSync = require('browser-sync').create();       //runtime watcher and changer
+const clean = require('gulp-clean');                        //cleaner product directory "dev"
+const cleanCSS = require('gulp-clean-css');                 //CSS minifier
+const sourcemaps = require('gulp-sourcemaps');              //SCSS navigation in Chrome inspector
+const rename = require("gulp-rename");                      //rename files after minify
+const concat = require('gulp-concat');                      //concat for js
+const terser = require('gulp-terser');                      //minify for js
+const autoprefixer = require('gulp-autoprefixer');          //cross-browser compatibility css
+const babel = require('gulp-babel');                        //cross-browser compatibility js
 const nunjucks = require('gulp-nunjucks-render');           //template engine
+const imagemin = require('gulp-imagemin');
 
-const fontsFiles = [										//составляем массив переменних с все файлов шрифтов, для переноса в папку разработки
-	'./src/fonts/**.eot',
-	'./src/fonts/**.ttf',
-	'./src/fonts/**.woff',
-	'./src/fonts/**.otf'
+const fontsFiles = [                                        
+    './src/fonts/**.eot',
+    './src/fonts/**.ttf',
+    './src/fonts/**.woff',
+    './src/fonts/**.otf'
 ];
 
 const imgFiles = [
+    './src/img/**/**.svg',
     './src/img/**/**.jpg',
+    './src/img/**/**.jpeg',
     './src/img/**/**.png'
 ];
 
-
-function cleandev() {										//модуль отчистки папки перед каждой расспаковкой
-    return gulp.src('./build', {read: false})
+function cleandev() {                                       
+    return gulp.src('./dist', {read: false})
         .pipe(clean())
 }
 
-function img() {											//модуль переноса картинок
+function img() {                                            
     return gulp.src(imgFiles)
-        .pipe(gulp.dest('./build/img'))
+    .pipe(imagemin())
+        .pipe(gulp.dest('./dist/img'))
 }
 
-function buildhtml () {										//Copy index.html to dir "dev"
-    return gulp.src('./src/*.html')
-            .pipe(nunjucks({                                // Шаблонизатор
-                path: 'src/'
-            }))
-            .pipe(gulp.dest('build'))
-            .pipe(browserSync.stream());
-}
-
-function fonts () {											//Copy fonts to dir "dev"
+function fonts () {                                      
     return gulp.src(fontsFiles)
-        .pipe(gulp.dest('./build/fonts'))
+        .pipe(gulp.dest('./dist/fonts'))
 }
 
-function jq () {											//Copy fonts to dir "dev"
+function js () {                                            
     return gulp.src('./src/js/*.js')
-        .pipe(gulp.dest('./build/js'))
+        .pipe(gulp.dest('./dist/js'))
 }
 
 function scripts () {
     return gulp.src('src/sections/**/*.js')
-		.pipe(babel({											//babel превращает новый script в старый 
+        .pipe(babel({                                           
             presets: ['@babel/env']
         }))
-        .pipe(terser({											//terser
-			toplevel: true
-		}))														//minify js
-        .pipe(concat('all.js'))									//concat all js files
-		.pipe(rename(function (path) {							// function of rename extname for .css
+        .pipe(terser({                                          
+            toplevel: true
+        }))                                                     
+        .pipe(concat('all.js'))                                 
+        .pipe(rename(function (path) {                          
             path.extname = ".min.js";
         }))
-        .pipe(gulp.dest('./build/js'))
-		.pipe(browserSync.stream());
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(browserSync.stream());
 }
 
 function forSass() {
     return gulp.src('./src/scss/*.scss')
         .pipe(sass())
-        .pipe(cleanCSS({level: 2}))								// minifyCSS удаляет старый css
+        .pipe(cleanCSS({level: 2}))                             
         .pipe(autoprefixer({
-            browsers: ['> 0.1%'],								// для браузеров которые использует 0.1%
-			cascade: false
+            browsers: ['> 0.1%'],                               
+            cascade: false
         }))
-        .pipe(rename(function (path) {							// function of rename extname for .css
+        .pipe(rename(function (path) {                          
             path.extname = ".min.css";
         }))
-        .pipe(gulp.dest('./build/css'))
-		.pipe(browserSync.stream());
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.stream());
 }
 
 function watch() {
-	browserSync.init({											// инструмент для live reload
-		server: {
-			baseDir: "./build"        // куда заново заносить
-		}
-	});
+    browserSync.init({                                          
+        server: {
+            baseDir: "./"
+        }
+    });
 
-	gulp.watch('./src/**/*.scss', forSass);				// ставим watcher для слежения за изменениями в файлах
-	gulp.watch('./src/**/*.js', scripts);
-	gulp.watch('./src/**/*.html', buildhtml);
+    gulp.watch('./src/**/*.scss', forSass);             
+    gulp.watch('./src/**/*.js', scripts);
 }
 
 gulp.task('cleandev', cleandev);
 gulp.task('img', img);
-gulp.task('buildHtml', buildhtml);
 gulp.task('scripts', scripts);
 gulp.task('sass', forSass);
 gulp.task('watch', watch);
 gulp.task('fonts', fonts);
-gulp.task('jq', jq);
-gulp.task('build', gulp.series('cleandev', gulp.series(img, buildhtml, fonts, jq, scripts, forSass)));
+gulp.task('js', js);
+gulp.task('build', gulp.series('cleandev', gulp.series(img, fonts, js, scripts, forSass)));
 gulp.task('dev', gulp.series('build', watch));
