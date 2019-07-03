@@ -1,0 +1,47 @@
+@import "../variables.scss";
+
+.rewiev-section {
+    background-color: #4b3b4e;
+    background-image: url(../img/review-bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 1%;
+    padding-top: 60px;
+
+    &-blocks {
+    	margin-top: 49px;
+    	display: flex;
+    	flex-wrap: wrap;
+    	justify-content: center;
+    	align-items: baseline;
+    	align-content: flex-start;
+    }
+
+    &-logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &-rewiev-text {
+        font-family: $main-font-1;
+        font-size: 16px;
+        color: $text-color-light;
+        text-align: center;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1.5;
+        margin-right: 23px;
+        margin-left: 23px;
+        margin-top: 32px;
+        margin-bottom: 44px;
+    }
+
+    &-footnote {
+        display: none;
+    }
+
+    &-end {
+        height: 2px;
+        background-color: #b7aab9;
+        margin: 0 5px;
+    }
+}

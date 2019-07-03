@@ -5,7 +5,6 @@
 - SCSS;
 - mobile first slicing strategy;
 - Gulp;
-- JavaSript;
 - jQuery.
 
 #### 2 contributers:
@@ -23,3 +22,10 @@ To slice:
 - `Revolutionary Editor` Section;
 - `Here is what you get` Section;
 - `Fork Subscription Pricing` Section. 
+
+
+#### Dev Setup
+# install dependencies:
+npm install
+# live reload at localhost:
+gulp dev

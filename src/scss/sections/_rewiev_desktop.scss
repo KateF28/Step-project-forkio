@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $desktop) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .rewiev-section {
+        padding-top: 98px;
+        background-size: contain;
+
+        &-blocks {
+            margin-top: 85px;
+        }
+
+        &-rewiev-text {
+            margin-bottom: 107px;
+        }
+
+        &-footnote {
+            max-width: 857px;
+            margin: 0 auto;
+            margin-top: 14px;
+            margin-bottom: 15px;
+        }
+
+        &-end {
+            margin: 0 300px;
+        }
+    }
+
+}
