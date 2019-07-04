@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+@media only screen and (min-width:$tablet ){
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .pref-item-cont {
+    display: flex;
+    flex-direction: row;
+  }
+  .preferences{
+    &-items-header{
+      text-align: left;
+    }
+    &-items-text{
+      text-align:left;
+    }
+  }
+
+  .window {
+    width: 736px;
+    height: 475px;
+  }
+
+}

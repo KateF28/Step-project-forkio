@@ -1,0 +1,66 @@
+@import "../variables.scss";
+
+.presentation-under-btn-text{
+  font-family: $main-font-2;
+  font-size: 14px;
+  text-align: center;
+  color: #848e97;
+  margin: 35px 0 72px 0;
+}
+.presentation {
+    &-under-btn-text{
+        font-family: $main-font-2;
+        font-size: 14px;
+        text-align: center;
+        color: #848e97;
+        margin: 35px 0 72px 0;
+    }
+    &-title {
+        font-family:$main-font-2;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 1.62;
+        text-align: center;
+        color: #635c73;
+        text-transform: uppercase;
+    }
+    &-text {
+      /*opacity: 0.8;*/
+        font-family:$main-font-1;
+        font-size: 14px;
+        line-height: 1.43;
+        text-align: center;
+        color: rgba(50, 50, 50, 0.8);
+        margin: 0 0 24px 0;
+    }
+    &-btn{
+        font-family:$main-font-1;
+        border: 1px solid #e5e5e5;
+        border-radius: 3px 0 0 3px;
+        padding: 3px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 10px 0 10px 0;
+        background: #efefef;
+        display: inline-block;
+
+        &-container {
+          text-align: center;
+          margin-bottom: 88px;
+        }
+    }
+}
+
+.btn-value {
+  font-family: 'Lato', sans-serif; /*$main-font-1;*/
+  border: 1px solid #e5e5e5;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 0 3px 3px 0;
+  margin: 10px 10px 10px 0;
+  display: inline-block;
+}
+.icn {
+  padding-right: 4px ;
+}
