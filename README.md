@@ -24,8 +24,8 @@ To slice:
 - `Fork Subscription Pricing` Section. 
 
 
-#### Dev Setup
-# install dependencies:
+## Dev Setup
+#### install dependencies:
 npm install
-# live reload at localhost:
+#### live reload at localhost:
 gulp dev

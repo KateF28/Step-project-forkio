@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-.rewiev-section {
+.review-section {
     background-color: #4b3b4e;
     background-image: url(../img/review-bg.jpeg);
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@
         margin: 0 auto;
     }
 
-    &-rewiev-text {
+    &-review-text {
         font-family: $main-font-1;
         font-size: 16px;
         color: $text-color-light;
