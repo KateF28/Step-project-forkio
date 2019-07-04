@@ -2,7 +2,7 @@
 
 @media only screen and (min-width:$tablet ){
   .container {
-    max-width: 768px;
+    max-width: $tablet;
     margin: 0 auto;
   }
   .pref-item-cont {
@@ -10,6 +10,8 @@
     flex-direction: row;
   }
   .preferences{
+    padding-bottom: 45px;
+
     &-items-header{
       text-align: left;
     }
@@ -19,7 +21,6 @@
   }
 
   .window {
-    width: 736px;
     height: 475px;
   }
 

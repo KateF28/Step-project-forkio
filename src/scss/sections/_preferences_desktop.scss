@@ -1,0 +1,23 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $desktop) {
+  .container {
+    max-width: $desktop;
+  }
+  .preferences {
+    padding-bottom: 55px;
+
+    &-items-container {
+      width: 50%;
+    }
+    &-header {
+      text-align: right;
+    }
+  }
+  .window {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 100px;
+  }
+}
