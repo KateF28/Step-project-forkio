@@ -1,0 +1,33 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $desktop) {
+  .container {
+    max-width: 1200px;
+  }
+  .pricing-plan{
+    padding-top: 80px;
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-header{
+      font-size: 48px;
+    }
+    &-items-container{
+      width: 90%;
+      flex-wrap: nowrap;
+      margin: 0 auto;
+    }
+  }
+  .plan {
+    &-line{
+      align-self: center;
+    }
+    &-btn {
+      margin: 38px ;
+    }
+  }
+
+}

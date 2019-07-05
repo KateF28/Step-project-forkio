@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+@media only screen and (min-width: $tablet) {
+  .container {
+    max-width: $tablet;
+    margin: 0 auto;
+  }
+  .pricing-plan {
+
+    &-header {
+      font-size: 42px;
+    }
+
+    &-items-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &-item {
+      /*flex: 1 1 257px;*/
+      width: 40%;
+      margin-top: 46px;
+      margin-bottom: 46px;
+    }
+  }
+  .prc-pln-itm-active {
+    margin: 0 14px;
+  }
+  .crd-hdr-active{
+    padding: 50px 0 40px 0;
+  }
+  .crd-bd-active {
+
+  }
+  .crd-ttl-active{
+    font-size: 82px;
+  }
+  .last-item{
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,83 @@
+@import "../variables.scss";
+
+.pricing-plan{
+  background-color: #4a3b4e;
+  padding: 80px 0;
+
+  &-item {
+    margin: 14px;
+    background-color: #645466;
+    text-align: center;
+  }
+  &-header {
+    font-family:  $main-font-2;
+    font-size: 28px;
+    line-height: 1.5;
+    text-align: center;
+    color: $text-color-light;
+  }
+}
+.plan{
+  &-duration {
+    font-family: $main-font-2;
+    font-size: 14px;
+    line-height: 6.46;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  &-info {
+    font-family: $main-font-2;
+    font-size: 16px;
+    line-height: 2;
+    color: $text-color-light;
+    padding: 0 47px;
+  }
+  &-btn{
+    text-transform: uppercase;
+    font-weight: normal;
+    padding:16px 38px;
+    background-color: #796b79;
+    display: inline-block;
+    margin:38px 0;
+  }
+  &-line {
+    display: inline-block;
+    width: 60px;
+    border-bottom: 5px solid #7c6c8b;
+  }
+}
+.card{
+  &-header{
+    background-color: #695b6b;
+    text-transform: uppercase;
+    padding: 46px 0 34px 0;
+    font-family:  $main-font-2;
+    font-size: 24px;
+    line-height: 0.85;
+    text-align: center;
+    color: $text-color-light;
+  }
+  &-title {
+    font-family: $main-font-2;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.51;
+    color: #ffffff;
+  }
+}
+.prc-pln-itm-active {
+  margin-right: 0;
+  margin-left: 0;
+}
+.crd {
+  &-hdr-active{
+    background-color: #392d3d;
+  }
+  &-bd-active {
+    background-color: #46384c;
+  }
+  &-ttl-active{
+    font-size: 82px;
+  }
+
+}
