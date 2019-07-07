@@ -7,17 +7,12 @@
   }
   .pricing-plan {
 
-    &-header {
-      font-size: 42px;
-    }
-
     &-items-container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
     }
-
     &-item {
       /*flex: 1 1 257px;*/
       width: 40%;
