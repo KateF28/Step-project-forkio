@@ -1,7 +1,9 @@
-prepros-6.config
 .idea/
+
 *.iml
-node_modules/
-build/
-src/css/
-package-lock.json
+
+*
+
+*/
+
+!.gitignore
