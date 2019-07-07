@@ -1,9 +1,5 @@
 .idea/
-
 *.iml
-
 *
-
 */
-
 !.gitignore
