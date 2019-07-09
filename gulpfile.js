@@ -12,13 +12,6 @@ const babel = require('gulp-babel');                        //cross-browser comp
 const nunjucks = require('gulp-nunjucks-render');           //template engine
 const imagemin = require('gulp-imagemin');
 
-const fontsFiles = [                                        
-    './src/fonts/**.eot',
-    './src/fonts/**.ttf',
-    './src/fonts/**.woff',
-    './src/fonts/**.otf'
-];
-
 const imgFiles = [
     './src/img/**/**.svg',
     './src/img/**/**.jpg',
@@ -35,11 +28,6 @@ function img() {
     return gulp.src(imgFiles)
     .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'))
-}
-
-function fonts () {                                      
-    return gulp.src(fontsFiles)
-        .pipe(gulp.dest('./dist/fonts'))
 }
 
 function js () {                                            
@@ -94,7 +82,5 @@ gulp.task('img', img);
 gulp.task('scripts', scripts);
 gulp.task('sass', forSass);
 gulp.task('watch', watch);
-gulp.task('fonts', fonts);
 gulp.task('js', js);
-gulp.task('build', gulp.series('cleandev', gulp.series(img, fonts, js, scripts, forSass)));
-gulp.task('dev', gulp.series('build', watch));
+gulp.task('dev', gulp.series('cleandev', gulp.series(img, js, scripts, forSass), watch));

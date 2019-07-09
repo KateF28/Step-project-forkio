@@ -2,7 +2,7 @@
   "name": "Step-project-forkio",
   "version": "1.0.0",
   "description": "The Step-project on GULP and SCSS using mobile-first slicing methodology",
-  "main": "script.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,10 +12,6 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
   "browserslist": [
     "last 1 version",
     "> 0.1%",
@@ -38,9 +34,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.1.7",
-    "imagemin": "^6.1.0"
-  },
-  "dependencies": {
+    "imagemin": "^6.1.0",
     "gulp-imagemin": "^6.0.0"
   }
 }
